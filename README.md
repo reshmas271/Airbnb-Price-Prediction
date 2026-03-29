@@ -4,7 +4,7 @@ Predict Airbnb listing prices using public listings data.
 This project includes 
 **data cleaning**, 
 **feature engineering**, 
-**model training**,
+**model training**, and a
 **Streamlit interactive app**.
 
 ---
