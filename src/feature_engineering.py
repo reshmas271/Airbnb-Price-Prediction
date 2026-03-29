@@ -1,11 +1,18 @@
 import pandas as pd
 
 def engineer_features(df):
-    # Convert categorical variables
+    df = df.copy()
+
+    # Extract bathrooms safely
+    df['bathrooms'] = df['bathrooms_text'].str.extract(r'(\d+\.?\d*)')[0]
+    df['bathrooms'] = pd.to_numeric(df['bathrooms'], errors='coerce')
+
+    df = df.drop(columns=['bathrooms_text'])
+
+    # One-hot encode
     df = pd.get_dummies(df, columns=['room_type'], drop_first=True)
 
-    # Extract numeric bathrooms
-    df['bathrooms'] = df['bathrooms_text'].str.extract(r'(\d+\.?\d*)').astype(float)
-    df = df.drop(columns=['bathrooms_text'])
+    # Fill missing
+    df = df.fillna(0)
 
     return df
