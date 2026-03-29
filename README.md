@@ -1,7 +1,11 @@
 # Airbnb Price Prediction
 
 Predict Airbnb listing prices using public listings data.  
-This project includes **data cleaning**, **feature engineering**, **model training**, and a **Streamlit interactive app**.
+This project includes 
+**data cleaning**, 
+**feature engineering**, 
+**model training**,
+**Streamlit interactive app**.
 
 ---
 
@@ -29,7 +33,6 @@ airbnb-price-prediction/
 ---
 
 ## Prerequisites
-
 - Python 3.10+  
 - pip (Python package manager)  
 
@@ -38,24 +41,29 @@ Optional but recommended:
 ```bash
 python3 -m venv venv
 source venv/bin/activate
-Dataset
-Download the Detailed Listings CSV for your city from Inside Airbnb
-.
+```
+
+## Dataset
+Download the Detailed Listings CSV for your city from Inside Airbnb.
 Place it in:
+```bash
 data/raw/listings.csv
-
+```
 If the file is .csv.gz, unzip it first:
-
+```bash
 gunzip data/raw/listings.csv.gz
-Install Dependencies
+```
+## Install Dependencies
+```bash
 pip3 install -r requirements.txt
+```
 Includes pandas, scikit-learn, Streamlit, joblib, etc.
-Run Everything (Recommended)
 
+## Run Everything (Recommended)
 From the project root, run:
-
+```bash
 python3 run_all.py
-
+```
 This will:
 
 Clean the data → data/processed/cleaned.csv
@@ -69,20 +77,25 @@ Manual Steps (Optional)
 If you prefer to run steps individually:
 
 1. Clean data
+```bash
 python3 -m src.data_cleaning
-2. Train the model
+```
+3. Train the model
+```bash
 python3 -m src.train
-3. Launch Streamlit
+```
+4. Launch Streamlit
+```bash
 streamlit run app/app.py --server.headless true --browser.gatherUsageStats false
-
+```
 Press Ctrl + C in Terminal to stop Streamlit.
 
-Notes
+## Notes
 run_all.py automatically creates models/ and data/processed/ if missing.
 Streamlit runs fully locally — no login or email required.
 Update dependencies later:
 pip install -r requirements.txt --upgrade
-References
+## References
 Inside Airbnb
  — public dataset
 Python libraries: pandas, scikit-learn, Streamlit
