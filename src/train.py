@@ -4,7 +4,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error
 import joblib
 
-from feature_engineering import engineer_features
+from src.feature_engineering import engineer_features
 
 def train():
     df = pd.read_csv("data/processed/cleaned.csv")
@@ -25,7 +25,8 @@ def train():
 
     print(f"MAE: {mae:.2f}")
 
-    joblib.dump(model, "models/model.pkl")
+    # ✅ Save BOTH model + column structure
+    joblib.dump((model, X.columns.tolist()), "models/model.pkl")
 
 if __name__ == "__main__":
     train()
