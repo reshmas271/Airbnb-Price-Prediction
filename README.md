@@ -66,13 +66,12 @@ python3 run_all.py
 ```
 This will:
 
-Clean the data → data/processed/cleaned.csv
-Train the model → models/model.pkl
-Launch the Streamlit app locally
+1. Clean the data → data/processed/cleaned.csv
+2. Train the model → models/model.pkl
+3. Launch the Streamlit app locally
+   >> Open the Local URL (e.g., http://localhost:8501) in your browser.
 
-Open the Local URL (e.g., http://localhost:8501) in your browser.
-
-Manual Steps (Optional)
+## Manual Steps (Optional)
 
 If you prefer to run steps individually:
 
